@@ -24,6 +24,8 @@
         <maven.version>3.6.3</maven.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.release>${java.version}</maven.compiler.release>
 
         <!--Libs-->
@@ -40,7 +42,7 @@
         <dependency>
             <groupId>com.github.KolomietsDmitriy</groupId>
             <artifactId>ru.ubrr.step</artifactId>
-            <version>master-SNAPSHOT</version>
+            <version>master-b2cd7b9cd2-1</version>
         </dependency>
 
         <dependency>
