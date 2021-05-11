@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.github.KolomietsDmitriy</groupId>
             <artifactId>ru.ubrr.step</artifactId>
-            <version>master-b2cd7b9cd2-1</version>
+            <version>master-SNAPSHOT</version>
         </dependency>
 
         <dependency>
