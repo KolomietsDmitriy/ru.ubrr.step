@@ -40,12 +40,6 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.github.KolomietsDmitriy</groupId>
-            <artifactId>ru.ubrr.step</artifactId>
-            <version>master-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
             <version>${log4j-slf4j-impl.version}</version>
