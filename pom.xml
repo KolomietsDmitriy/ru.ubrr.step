@@ -99,7 +99,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>games.Slot</mainClass>
+                            <mainClass>games.Choiсe</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
