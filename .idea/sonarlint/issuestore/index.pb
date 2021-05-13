@@ -20,3 +20,13 @@ H
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 H
 steps/step2/README.ru.md,8\9\89f05f594bc3bbb6fe430aaa2536bf6ca17a65e5
+G
+maven-version-rules.xml,f\a\fa51be9888a6caea01836f0e7e2a1bcae1306ce7
+H
+steps/step3/README.ru.md,4\c\4c1a4f05004379ec63712bf1556351fa90f33664
+8
+Makefile,8\3\836efb6e25a091dcb4ff8e1dbb2f0be6a5cbf14c
+H
+steps/step4/README.ru.md,e\e\ee10dd3900e9c73fbc558293075d51f8e1ecd750
+E
+config/checkstyle.xml,f\f\ff23b6a211bca75763cc6c2711c3cbff471b0075
