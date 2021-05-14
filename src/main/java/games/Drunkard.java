@@ -1,9 +1,13 @@
 package games;
 
+import org.slf4j.Logger;
+
 import static games.CardUtils.*;
 import static java.lang.String.format;
 
 public class Drunkard {
+
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Drunkard.class);
 
     private static int[][] playersCards = new int[2][CARDS_TOTAL_COUNT];
     private static int[] allCards = new int[CARDS_TOTAL_COUNT];
@@ -28,7 +32,7 @@ public class Drunkard {
             int firstCard = getHeadCard(FIRST);
             int secondCard = getHeadCard(SECOND);
 
-            System.out.println(format("Итерация №%d; игрок №1 карта: %s; игрок №2 карта: %s.",
+            log.info(format("Итерация №%d; игрок №1 карта: %s; игрок №2 карта: %s.",
                     countIteration,
                     printCard(firstCard),
                     printCard(secondCard)));
@@ -36,37 +40,37 @@ public class Drunkard {
             int resultCompare = compareCard(getValueCard(firstCard), getValueCard(secondCard));
 
             if (resultCompare == 1) {
-                System.out.println("Выиграл игрок 1");
+                log.info("Выиграл игрок 1");
                 addCard(FIRST, firstCard);
                 addCard(FIRST, secondCard);
             } else if (resultCompare == 2) {
-                System.out.println("Выиграл игрок 2");
+                log.info("Выиграл игрок 2");
                 addCard(SECOND, firstCard);
                 addCard(SECOND, secondCard);
             } else {
-                System.out.println("Ничья");
+                log.info("Ничья");
                 addCard(FIRST, firstCard);
                 addCard(SECOND, secondCard);
             }
 
-            System.out.println(format("У игрока 1 %d карт. У игрока 2 %d карт",
+            log.info(format("У игрока 1 %d карт. У игрока 2 %d карт",
                     countCard[FIRST],
                     countCard[SECOND]));
 
             if (countCard[FIRST] == 0) {
                 win = true;
-                System.out.println("Победил второй игрок!");
+                log.info("Победил второй игрок!");
             } else if (countCard[SECOND] == 0) {
                 win = true;
-                System.out.println("Победил первый игрок!");
+                log.info("Победил первый игрок!");
             }
 
         }
 
-//        System.out.println("1 array");
-//        System.out.println(Arrays.toString(playersCards[0]));
-//        System.out.println("2 array");
-//        System.out.println(Arrays.toString(playersCards[1]));
+//        log.info("1 array");
+//        log.info(Arrays.toString(playersCards[0]));
+//        log.info("2 array");
+//        log.info(Arrays.toString(playersCards[1]));
 
     }
 

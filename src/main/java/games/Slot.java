@@ -1,10 +1,15 @@
 package games;
 
+import org.slf4j.Logger;
+
 import static java.lang.Boolean.FALSE;
 import static java.lang.Math.random;
 import static java.lang.Math.round;
 
 public class Slot {
+
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(Slot.class);
+    
     public static void main(String... __) {
         int cash = 100;
         int bet = 10;
@@ -18,11 +23,11 @@ public class Slot {
         for (int i = 0; i < countSlot; i++) valueSlot[i] = 1;
 
         while (cash > 0) {
-            System.out.println("У Вас " + cash + "$, ставка - " + bet + "$");
+            log.info("У Вас " + cash + "$, ставка - " + bet + "$");
 
             cash -= bet;
 
-            System.out.println("Крутим барабаны!Розыгрыш принёс следующие результаты:");
+            log.info("Крутим барабаны!Розыгрыш принёс следующие результаты:");
             for (int i = 0; i < countSlot; i++) {
 
                 valueSlot[i] = (valueSlot[i] + (int) round(random() * 100)) % range + 1;
@@ -35,17 +40,17 @@ public class Slot {
             }
             prevSlot = 0;
 
-            System.out.println(" ");
+            log.info(" ");
 
             if (win) {
                 cash += prize;
-                System.out.println("Победа! Ваш капитал теперь составляет: " + cash + "$");
+                log.info("Победа! Ваш капитал теперь составляет: " + cash + "$");
                 break;
             } else {
-                System.out.println("Проигрыш " + bet + "$, ваш капитал теперь составляет: " + cash + "$");
+                log.info("Проигрыш " + bet + "$, ваш капитал теперь составляет: " + cash + "$");
             }
         }
 
-        System.out.println("Игра закончена");
+        log.info("Игра закончена");
     }
 }

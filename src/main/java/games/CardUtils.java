@@ -29,10 +29,6 @@ public class CardUtils {
     public static final int PARS_TOTAL_COUNT = Par.values().length;
     public static final int CARDS_TOTAL_COUNT = PARS_TOTAL_COUNT * Suit.values().length;
 
-    public static void main(String[] args) {
-        System.out.println("12");
-    }
-
     public static String printCard(int cardNumber) {
         return getPar(cardNumber) + " " + getSuit(cardNumber);
     }

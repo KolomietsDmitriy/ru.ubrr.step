@@ -1,5 +1,7 @@
 package games;
 
+import org.slf4j.Logger;
+
 import java.io.IOException;
 
 import static games.CardUtils.*;
@@ -7,6 +9,8 @@ import static games.Choiсe.getCharacterFromUser;
 import static java.lang.String.format;
 
 public class BlackJack {
+
+    private static final Logger log = org.slf4j.LoggerFactory.getLogger(BlackJack.class);
 
     private static int[] allCards; // Основная колода
     private static int allCardIndex; // Счётчик карт основной колоды
@@ -45,7 +49,7 @@ public class BlackJack {
     }
 
     private static void initRound() {
-        System.out.println("\nУ Вас " + playersCash[0] + "$, у компьютера - " + playersCash[1] + "$. Начинаем новый раунд!");
+        log.info("\nУ Вас " + playersCash[0] + "$, у компьютера - " + playersCash[1] + "$. Начинаем новый раунд!");
         allCards = getShuffleArray();
         playersCards = new int[2][MAX_CARDS_COUNT];
         playersCardIndex = new int[]{0, 0};
@@ -78,7 +82,7 @@ public class BlackJack {
     }
 
     static boolean confirm(String message) throws IOException {
-        System.out.println(message + " \"Y\" - Да, {любой другой символ} - нет (Чтобы выйти из игры, нажмите Ctrl + C)");
+        log.info(message + " \"Y\" - Да, {любой другой символ} - нет (Чтобы выйти из игры, нажмите Ctrl + C)");
         switch (getCharacterFromUser()) {
             case 'Y':
             case 'y':
@@ -92,32 +96,32 @@ public class BlackJack {
         int currentCard = 0;
 
         currentCard = addCard(FIRST);
-        System.out.println(format("Вам выпала карта %s", printCard(currentCard)));
-        System.out.println(format("У вас %d", calcSumScore(FIRST)));
+        log.info(format("Вам выпала карта %s", printCard(currentCard)));
+        log.info(format("У вас %d", calcSumScore(FIRST)));
     }
 
     private static void addCardDiler() {
         int currentCard = 0;
 
         currentCard = addCard(SECOND);
-        System.out.println(format("У дилера выпала карта %s", printCard(currentCard)));
-        System.out.println(format("У дилера %d", calcSumScore(SECOND)));
+        log.info(format("У дилера выпала карта %s", printCard(currentCard)));
+        log.info(format("У дилера %d", calcSumScore(SECOND)));
     }
 
     private static void winPlayer() {
-        System.out.println("Вы выиграли раунд! Получаете 10$");
+        log.info("Вы выиграли раунд! Получаете 10$");
         playersCash[FIRST] += 10;
         playersCash[SECOND] -= 10;
     }
 
     private static void winDiler() {
-        System.out.println("Вы проиграли раунд! Теряете 10$");
+        log.info("Вы проиграли раунд! Теряете 10$");
         playersCash[SECOND] += 10;
         playersCash[FIRST] -= 10;
     }
 
     private static void noWinner() {
-        System.out.println("Ничья");
+        log.info("Ничья");
     }
 
     public static void main(String... __) throws IOException {

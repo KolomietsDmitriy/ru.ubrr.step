@@ -13,9 +13,6 @@ H
 .mvn/wrapper/wrapper.iml,f\6\f6a4158f10b67fc852fdf18dea89e3468fad587c
 ;
 JitPack.yml,6\d\6d0262a6a9d57377036594a1852a8b36abdb9c99
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 H
 steps/step2/README.ru.md,8\9\89f05f594bc3bbb6fe430aaa2536bf6ca17a65e5
 G
