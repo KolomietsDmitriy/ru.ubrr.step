@@ -1,37 +1,9 @@
 package games;
 
-import org.apache.commons.math3.util.MathArrays;
-
-import java.util.Arrays;
-
+import static games.CardUtils.*;
 import static java.lang.String.format;
 
 public class Drunkard {
-
-    private static final int PARS_TOTAL_COUNT = Par.values().length;
-    private static final int CARDS_TOTAL_COUNT = PARS_TOTAL_COUNT * Suit.values().length;
-    private static final int FIRST = 0;
-    private static final int SECOND = 1;
-
-
-    enum Suit {
-        SPADES, // пики
-        HEARTS, // червы
-        CLUBS, // трефы
-        DIAMONDS // бубны
-    }
-
-    enum Par {
-        SIX,
-        SEVEN,
-        EIGHT,
-        NINE,
-        TEN,
-        JACK, // Валет
-        QUEEN, // Дама
-        KING, // Король
-        ACE // Туз
-    }
 
     private static int[][] playersCards = new int[2][CARDS_TOTAL_COUNT];
     private static int[] allCards = new int[CARDS_TOTAL_COUNT];
@@ -41,13 +13,10 @@ public class Drunkard {
 
     public static void main(String... __) {
 
-
         boolean win = false;
         int countIteration = 0;
 
-        for (int i = 0; i < CARDS_TOTAL_COUNT; i++) allCards[i] = i;
-
-        MathArrays.shuffle(allCards);
+        allCards = getShuffleArray();
 
 //        playersCards[0] = Arrays.copyOfRange(allCards, 0, allCards.length / 2);
 //        playersCards[1] = Arrays.copyOfRange(allCards, allCards.length / 2, allCards.length);
@@ -101,17 +70,6 @@ public class Drunkard {
 
     }
 
-    private static String printCard(int cardNumber) {
-        return getPar(cardNumber) + " " + getSuit(cardNumber);
-    }
-
-    private static Suit getSuit(int cardNumber) {
-        return Suit.values()[cardNumber / PARS_TOTAL_COUNT];
-    }
-
-    private static Par getPar(int cardNumber) {
-        return Par.values()[cardNumber % PARS_TOTAL_COUNT];
-    }
 
     private static int getHeadCard(int playerInd) {
         int card = playersCards[playerInd][headCard[playerInd]];//взяли карту

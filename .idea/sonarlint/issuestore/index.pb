@@ -1,8 +1,6 @@
 
 H
 steps/step1/README.ru.md,8\7\87946e0b0f29c3ad4b0709a7782b6ad6ab7692bd
-H
-steps/step6/README.ru.md,1\a\1aaac419559f148e15ea6f820fd08dc4d3bbab00
 X
 (.mvn/wrapper/MavenWrapperDownloader.java,6\1\61ba2d75f3f04e099148e7a84c6a909f2000ff04
 8
@@ -30,3 +28,5 @@ H
 steps/step4/README.ru.md,e\e\ee10dd3900e9c73fbc558293075d51f8e1ecd750
 E
 config/checkstyle.xml,f\f\ff23b6a211bca75763cc6c2711c3cbff471b0075
+H
+steps/step5/README.ru.md,5\0\50fb25cc60460fabbd0143f27f7785cb9c08099f
