@@ -27,3 +27,12 @@ E
 config/checkstyle.xml,f\f\ff23b6a211bca75763cc6c2711c3cbff471b0075
 H
 steps/step5/README.ru.md,5\0\50fb25cc60460fabbd0143f27f7785cb9c08099f
+H
+steps/step6/README.ru.md,1\a\1aaac419559f148e15ea6f820fd08dc4d3bbab00
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+=
+logs/Step.log,f\7\f7a6902e97295243b4b075dab824c2c1b42480a3
+R
+"src/main/java/games/CardUtils.java,b\6\b609d5994ae1a43f893709bf0d4d827de97c529f
